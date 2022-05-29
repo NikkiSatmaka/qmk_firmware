@@ -39,7 +39,10 @@ enum custom_keycodes {
     KC_NXTWD,
     KC_LSTRT,
     KC_LEND,
-    KC_DLINE
+    KC_DLINE,
+    OS_MISC,
+    OS_TMUX,
+    OS_FUNC
 };
 
 // Shortcut to make keymap more readable
@@ -65,6 +68,12 @@ const uint16_t flow_config[FLOW_COUNT][2] = {
     {L_FUNC, KC_LGUI},
     {L_FUNC, KC_LSFT},
     {L_FUNC, KC_LCTL}
+};
+
+const uint16_t flow_layers_config[FLOW_LAYERS_COUNT][2] = {
+    {OS_MISC, _MISC},
+    {OS_TMUX, _TMUX},
+    {OS_FUNC, _FUNC},
 };
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
