@@ -40,10 +40,6 @@ enum custom_keycodes {
     KC_LSTRT,
     KC_LEND,
     KC_DLINE,
-    KC_UNDO,
-    KC_CUT,
-    KC_COPY,
-    KC_PASTE,
     OS_FUNC
 };
 
