@@ -131,10 +131,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |------+------+------+------+------+------|  MUTE |    |       |------+------+------+------+------+------|
  * |      | Undo | Cut  | Copy | LGUI |Paste |-------|    |-------| Pscr | Bspc |  Tab | Menu | Enter|      |
  * `-----------------------------------------/       /     \      \-----------------------------------------'
- *            | LGUI | LAlt | LCTR | NAV  | /Enter  /       \Enter \  |FUNCT | RCTR | RAlt | RGUI |
+ *            | LGUI | LAlt | LCTR | NAV  | /LShift /       \Enter \  |FUNCT | RCTR | RAlt | RGUI |
  *            |      |      |      |      |/       /         \      \ |      |      |      |      |
  *            `----------------------------------'           '------''---------------------------'
  */
+
 [_NAV] = LAYOUT(
   _______, KC_F1,    KC_F2,       KC_F3,      KC_F4,       KC_F5,                             KC_F6,    KC_F7,    KC_F8,    KC_F9,    KC_F10,   KC_F11,
   _______, KC_ESC,   A(KC_LEFT),  C(KC_F),    A(KC_RGHT),  KC_INS,                            KC_PGUP,  KC_HOME,  KC_UP,    KC_END,   KC_CAPS,  KC_F12,
@@ -143,7 +144,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                   _______, _______, _______, _______, _______,       KC_ENT, L_FUNC, _______, _______, _______
 ),
 
-/* FUNCTION
+/* FUNC
  * ,-----------------------------------------.                    ,-----------------------------------------.
  * |      |      |      |      |      |      |                    |      |      |      |      |      |      |
  * |------+------+------+------+------+------|                    |------+------+------+------+------+------|
@@ -153,10 +154,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |------+------+------+------+------+------|  MUTE |    |       |------+------+------+------+------+------|
  * |      | EJECT| PREV | STOP | NEXT |      |-------|    |-------|  F10 |  F1  |  F2  |  F3  |ZoomRst|     |
  * `-----------------------------------------/       /     \      \-----------------------------------------'
- *            | LGUI | LAlt | LCTR | NAV  | /Enter  /       \Space \  | SYM  | RCTR | RAlt | RGUI |
+ *            | LGUI | LAlt | LCTR | NAV  | /LShift /       \Space \  | SYM  | RCTR | RAlt | RGUI |
  *            |      |      |      |      |/       /         \      \ |      |      |      |      |
  *            `----------------------------------'           '------''---------------------------'
  */
+
 [_FUNC] = LAYOUT(
   _______, _______, _______, _______, _______, _______,                               _______,  _______, _______,  _______,  _______, _______,
   _______, KC_MUTE,  KC_VOLD,  KC_MPLY,  KC_VOLU,  KC_BRIU,                           KC_F12,  KC_F7,  KC_F8,  KC_F9,  C(KC_PPLS),  _______,
@@ -175,10 +177,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |------+------+------+------+------+------|  MUTE |    |       |------+------+------+------+------+------|
  * |      |   \  |   |  |   }  |   )  |   ]  |-------|    |-------|   0  |   1  |   2  |   3  |   /  | Enter|
  * `-----------------------------------------/       /     \      \-----------------------------------------'
- *            | LGUI | LAlt | LCTR |MOUSE | /Enter  /       \Space \  | SYM  | RCTR | RAlt | RGUI |
+ *            | LGUI | LAlt | LCTR |MOUSE | /LShift /       \Space \  | SYM  | RCTR | RAlt | RGUI |
  *            |      |      |      |      |/       /         \      \ |      |      |      |      |
  *            `----------------------------------'           '------''---------------------------'
  */
+
 [_SYM] = LAYOUT(
   _______, KC_F1,    KC_F2,       KC_F3,     KC_F4,    KC_F5,                           KC_F6,    KC_F7,  KC_F8,  KC_F9,  KC_F10,   KC_F11,
   _______, KC_EXLM,  KC_AT,       KC_HASH,   KC_COLN,  KC_SCLN,                         KC_EQL,   KC_7,   KC_8,   KC_9,   KC_PLUS,  KC_F12,
@@ -201,13 +204,15 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  *            |      |      |      |      |/       /         \      \ |      |      |      |      |
  *            `----------------------------------'           '------''---------------------------'
  */
+
 [_MOUSE] = LAYOUT(
   _______,      _______, _______, _______, _______, _______,                             _______,  _______,  _______,  _______,  _______, _______,
   T_QWERTY,     _______,  KC_BTN1,  KC_MS_U,  KC_BTN2,  KC_WH_U,                         KC_ACL2,  KC_AMPR,  KC_GRV,   KC_TILD,  _______, _______,
   D_MOUSE,      _______,  KC_MS_L,  KC_MS_D,  KC_MS_R,  KC_WH_D,                         KC_ACL1,  KC_DLR,   KC_PERC,  KC_CIRC,  KC_UNDS, _______,
   D_COLEMAKDH,  KC_WH_L,  KC_BTN3,  KC_BTN4,  KC_BTN5,  KC_WH_R, _______,       _______, KC_ACL0,  KC_EXLM,  KC_AT,    KC_HASH,  _______, _______,
                              _______, _______, _______, _______, _______,       _______, _______, _______, _______, _______
-),
+)
+
 };
 
 #ifdef OLED_ENABLE
