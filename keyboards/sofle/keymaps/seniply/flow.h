@@ -1,5 +1,5 @@
 /*
-Copyright 2022 NikkiSatmaka <nsatmaka@gmail.com>
+Copyright 2022 Dalius Dobravolskas <dalius.dobravolskas@gmail.com>
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -14,13 +14,14 @@ GNU General Public License for more details.
 You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
-
 #pragma once
 
-/* The way how "handedness" is decided (which half is which),
-see https://docs.qmk.fm/#/feature_split_keyboard?id=setting-handedness
-for more options.
-*/
+#include QMK_KEYBOARD_H
 
-#define FLOW_COUNT 9
-#define FLOW_LAYERS_COUNT 5
+bool update_flow(
+    uint16_t keycode,
+    bool pressed,
+    keypos_t key_position
+);
+
+void flow_matrix_scan(void);
