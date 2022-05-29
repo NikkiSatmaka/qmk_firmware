@@ -40,8 +40,6 @@ enum custom_keycodes {
     KC_LSTRT,
     KC_LEND,
     KC_DLINE,
-    OS_MISC,
-    OS_TMUX,
     OS_FUNC
 };
 
@@ -71,9 +69,7 @@ const uint16_t flow_config[FLOW_COUNT][2] = {
 };
 
 const uint16_t flow_layers_config[FLOW_LAYERS_COUNT][2] = {
-    {OS_MISC, _MISC},
-    {OS_TMUX, _TMUX},
-    {OS_FUNC, _FUNC},
+    {OS_FUNC, _FUNC}
 };
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
