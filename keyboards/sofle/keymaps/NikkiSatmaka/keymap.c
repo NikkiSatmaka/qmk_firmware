@@ -129,7 +129,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |------+------+------+------+------+------|                    |------+------+------+------+------+------|
  * |      |O_LAlt|O_LGUI|O_LSft|O_Lctl|O_RAlt|-------.    ,-------| PDown| Left | Down | Right|  Del |      |
  * |------+------+------+------+------+------|  MUTE |    |       |------+------+------+------+------+------|
- * |      | Undo | Cut  | Copy | LGUI |Paste |-------|    |-------| Pscr | Bspc |  Tab | Menu | Enter|      |
+ * |      | Undo | Cut  | Copy | LGUI |Paste |-------|    |-------| Enter| Bspc |  Tab | Menu | Pscr |      |
  * `-----------------------------------------/       /     \      \-----------------------------------------'
  *            | LGUI | LAlt | LCTR | EXT  | /LShift /       \Enter \  |FUNCT | RCTR | RAlt | RGUI |
  *            |      |      |      |      |/       /         \      \ |      |      |      |      |
@@ -140,7 +140,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   _______, KC_F1,    KC_F2,       KC_F3,      KC_F4,       KC_F5,                             KC_F6,    KC_F7,    KC_F8,    KC_F9,    KC_F10,   KC_F11,
   _______, KC_ESC,   A(KC_LEFT),  C(KC_F),    A(KC_RGHT),  KC_INS,                            KC_PGUP,  KC_HOME,  KC_UP,    KC_END,   KC_CAPS,  KC_F12,
   _______, KC_LALT,  KC_LGUI,     KC_LSFT,    KC_LCTL,     KC_RALT,                           KC_PGDN,  KC_LEFT,  KC_DOWN,  KC_RGHT,  KC_DEL,   _______,
-  _______, C(KC_Z),  C(KC_X),     C(KC_INS),  KC_LGUI,     S(KC_INS), _______,       _______, KC_PSCR,  KC_BSPC,  KC_TAB,   KC_APP,   KC_ENT,   _______,
+  _______, C(KC_Z),  C(KC_X),     C(KC_INS),  KC_LGUI,     S(KC_INS), _______,       _______, KC_ENT,   KC_BSPC,  KC_TAB,   KC_APP,   KC_PSCR,  _______,
                                   _______, _______, _______, _______, _______,       KC_ENT, L_FUNC, _______, _______, _______
 ),
 
