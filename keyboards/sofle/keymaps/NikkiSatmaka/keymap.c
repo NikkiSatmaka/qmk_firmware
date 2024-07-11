@@ -22,7 +22,7 @@ enum sofle_layers {
     /* _M_XYZ = Mac Os, _W_XYZ = Win/Linux */
     _COLEMAKDH,
     _QWERTY,
-    _NAV,
+    _EXT,
     _FUNC,
     _SYM,
     _MOUSE,
@@ -32,7 +32,7 @@ enum sofle_layers {
 enum custom_keycodes {
     KC_COLEMAKDH = SAFE_RANGE,
     KC_QWERTY,
-    KC_NAV,
+    KC_EXT,
     KC_SYM,
     KC_ADJUST,
     KC_PRVWD,
@@ -45,7 +45,7 @@ enum custom_keycodes {
 
 // Shortcut to make keymap more readable
 
-#define L_NAV         MO(_NAV)
+#define L_EXT         MO(_EXT)
 #define L_SYM         MO(_SYM)
 #define L_FUNC        MO(_FUNC)
 #define L_MOUSE       MO(_MOUSE)
@@ -57,11 +57,11 @@ enum custom_keycodes {
 // * layer keycode
 // * modifier keycode
 const uint16_t flow_config[FLOW_COUNT][2] = {
-    {L_NAV, KC_LALT},
-    {L_NAV, KC_LGUI},
-    {L_NAV, KC_LSFT},
-    {L_NAV, KC_LCTL},
-    {L_NAV, KC_RALT},
+    {L_EXT, KC_LALT},
+    {L_EXT, KC_LGUI},
+    {L_EXT, KC_LSFT},
+    {L_EXT, KC_LCTL},
+    {L_EXT, KC_RALT},
     {L_FUNC, KC_LALT},
     {L_FUNC, KC_LGUI},
     {L_FUNC, KC_LSFT},
@@ -84,7 +84,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |------+------+------+------+------+------|  MUTE |    |       |------+------+------+------+------+------|
  * |LShift|   Z  |   X  |   C  |   D  |   V  |-------|    |-------|   K  |   H  |   ,  |   .  |   /  |Enter |
  * `-----------------------------------------/       /     \      \-----------------------------------------'
- *            | LGUI | LAlt | LCTR | NAV  | /LShift /       \Space \  | SYM  | RCTR | RAlt | RGUI |
+ *            | LGUI | LAlt | LCTR | EXT  | /LShift /       \Space \  | SYM  | RCTR | RAlt | RGUI |
  *            |      |      |      |      |/       /         \      \ |      |      |      |      |
  *            `----------------------------------'           '------''---------------------------'
  */
@@ -94,7 +94,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   KC_TAB,   KC_Q,   KC_W,    KC_F,    KC_P,    KC_B,                        KC_J,    KC_L,  KC_U,     KC_Y,    KC_QUOT,  KC_BSPC,
   KC_ESC,   KC_A,   KC_R,    KC_S,    KC_T,    KC_G,                        KC_M,    KC_N,  KC_E,     KC_I,    KC_O,     KC_SCLN,
   KC_LSFT,  KC_Z,   KC_X,    KC_C,    KC_D,    KC_V, KC_MUTE,      XXXXXXX, KC_K,    KC_H,  KC_COMM,  KC_DOT,  KC_SLSH,  KC_ENT,
-                  KC_LGUI, KC_LALT, KC_LCTRL, L_NAV, KC_LSFT,       KC_SPC, L_SYM, KC_RCTRL, KC_RALT, KC_RGUI
+                  KC_LGUI, KC_LALT, KC_LCTRL, L_EXT, KC_LSFT,       KC_SPC, L_SYM, KC_RCTRL, KC_RALT, KC_RGUI
 ),
 
 /*
@@ -108,7 +108,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |------+------+------+------+------+------|  MUTE |    |       |------+------+------+------+------+------|
  * |LShift|   Z  |   X  |   C  |   V  |   B  |-------|    |-------|   N  |   M  |   ,  |   .  |   /  |Enter |
  * `-----------------------------------------/       /     \      \-----------------------------------------'
- *            | LGUI | LAlt | LCTR | NAV  | /LShift /       \Space \  | SYM  | RCTR | RAlt | RGUI |
+ *            | LGUI | LAlt | LCTR | EXT  | /LShift /       \Space \  | SYM  | RCTR | RAlt | RGUI |
  *            |      |      |      |      |/       /         \      \ |      |      |      |      |
  *            `----------------------------------'           '------''---------------------------'
  */
@@ -118,10 +118,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   KC_TAB,   KC_Q,   KC_W,    KC_E,    KC_R,    KC_T,                       KC_Y,    KC_U,  KC_I,     KC_O,    KC_P,     KC_BSPC,
   KC_ESC,   KC_A,   KC_S,    KC_D,    KC_F,    KC_G,                       KC_H,    KC_J,  KC_K,     KC_L,    KC_SCLN,  KC_QUOT,
   KC_LSFT,  KC_Z,   KC_X,    KC_C,    KC_V,    KC_B, KC_MUTE,     XXXXXXX, KC_N,    KC_M,  KC_COMM,  KC_DOT,  KC_SLSH,  KC_ENT,
-                  KC_LGUI, KC_LALT, KC_LCTRL, L_NAV, KC_LSFT,      KC_SPC, L_SYM, KC_RCTRL, KC_RALT, KC_RGUI
+                  KC_LGUI, KC_LALT, KC_LCTRL, L_EXT, KC_LSFT,      KC_SPC, L_SYM, KC_RCTRL, KC_RALT, KC_RGUI
 ),
 
-/* NAV
+/* EXT
  * ,-----------------------------------------.                    ,-----------------------------------------.
  * |      |  F1  |  F2  |  F3  |  F4  |  F5  |                    |  F6  |  F7  |  F8  |  F9  | F10  | F11  |
  * |------+------+------+------+------+------|                    |------+------+------+------+------+------|
@@ -131,12 +131,12 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |------+------+------+------+------+------|  MUTE |    |       |------+------+------+------+------+------|
  * |      | Undo | Cut  | Copy | LGUI |Paste |-------|    |-------| Pscr | Bspc |  Tab | Menu | Enter|      |
  * `-----------------------------------------/       /     \      \-----------------------------------------'
- *            | LGUI | LAlt | LCTR | NAV  | /LShift /       \Enter \  |FUNCT | RCTR | RAlt | RGUI |
+ *            | LGUI | LAlt | LCTR | EXT  | /LShift /       \Enter \  |FUNCT | RCTR | RAlt | RGUI |
  *            |      |      |      |      |/       /         \      \ |      |      |      |      |
  *            `----------------------------------'           '------''---------------------------'
  */
 
-[_NAV] = LAYOUT(
+[_EXT] = LAYOUT(
   _______, KC_F1,    KC_F2,       KC_F3,      KC_F4,       KC_F5,                             KC_F6,    KC_F7,    KC_F8,    KC_F9,    KC_F10,   KC_F11,
   _______, KC_ESC,   A(KC_LEFT),  C(KC_F),    A(KC_RGHT),  KC_INS,                            KC_PGUP,  KC_HOME,  KC_UP,    KC_END,   KC_CAPS,  KC_F12,
   _______, KC_LALT,  KC_LGUI,     KC_LSFT,    KC_LCTL,     KC_RALT,                           KC_PGDN,  KC_LEFT,  KC_DOWN,  KC_RGHT,  KC_DEL,   _______,
@@ -154,7 +154,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |------+------+------+------+------+------|  MUTE |    |       |------+------+------+------+------+------|
  * |      | EJECT| PREV | STOP | NEXT |      |-------|    |-------|  F10 |  F1  |  F2  |  F3  |ZoomRst|     |
  * `-----------------------------------------/       /     \      \-----------------------------------------'
- *            | LGUI | LAlt | LCTR | NAV  | /LShift /       \Space \  | SYM  | RCTR | RAlt | RGUI |
+ *            | LGUI | LAlt | LCTR | EXT  | /LShift /       \Space \  | SYM  | RCTR | RAlt | RGUI |
  *            |      |      |      |      |/       /         \      \ |      |      |      |      |
  *            `----------------------------------'           '------''---------------------------'
  */
@@ -200,7 +200,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |------+------+------+------+------+------|  MUTE |    |       |------+------+------+------+------+------|
  * |DF_CLM|M Wl L|MOUS3 |MOUS4 |MOUS5 |M Wl R|-------|    |-------|M Acc0|   !  |   @  |   #  |      |      |
  * `-----------------------------------------/       /     \      \-----------------------------------------'
- *            | LGUI | LAlt | LCTR | NAV  | /Enter  /       \Space \  | SYM  | RCTR | RAlt | RGUI |
+ *            | LGUI | LAlt | LCTR | EXT  | /Enter  /       \Space \  | SYM  | RCTR | RAlt | RGUI |
  *            |      |      |      |      |/       /         \      \ |      |      |      |      |
  *            `----------------------------------'           '------''---------------------------'
  */
@@ -259,8 +259,8 @@ static void print_status_narrow(void) {
         case _SYM:
             oled_write_P(PSTR("Sym"), false);
             break;
-        case _NAV:
-            oled_write_P(PSTR("Nav"), false);
+        case _EXT:
+            oled_write_P(PSTR("Ext"), false);
             break;
         case _FUNC:
             oled_write_P(PSTR("Func"), false);
@@ -308,22 +308,22 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
                 set_single_persistent_default_layer(_QWERTY);
             }
             return false;
-        case KC_NAV:
+        case KC_EXT:
             if (record->event.pressed) {
-                layer_on(_NAV);
-                update_tri_layer(_NAV, _SYM, _ADJUST);
+                layer_on(_EXT);
+                update_tri_layer(_EXT, _SYM, _ADJUST);
             } else {
-                layer_off(_NAV);
-                update_tri_layer(_NAV, _SYM, _ADJUST);
+                layer_off(_EXT);
+                update_tri_layer(_EXT, _SYM, _ADJUST);
             }
             return false;
         case KC_SYM:
             if (record->event.pressed) {
                 layer_on(_SYM);
-                update_tri_layer(_NAV, _SYM, _ADJUST);
+                update_tri_layer(_EXT, _SYM, _ADJUST);
             } else {
                 layer_off(_SYM);
-                update_tri_layer(_NAV, _SYM, _ADJUST);
+                update_tri_layer(_EXT, _SYM, _ADJUST);
             }
             return false;
         case KC_ADJUST:
