@@ -25,6 +25,7 @@ enum sofle_layers {
     _EXT,
     _FUNC,
     _SYM,
+    _NUM,
     _MOUSE,
     _ADJUST
 };
@@ -48,6 +49,7 @@ enum custom_keycodes {
 #define L_EXT         MO(_EXT)
 #define L_SYM         MO(_SYM)
 #define L_FUNC        MO(_FUNC)
+#define L_NUM         MO(_NUM)
 #define L_MOUSE       MO(_MOUSE)
 #define T_QWERTY      TG(_QWERTY)
 #define D_MOUSE       DF(_MOUSE)
@@ -62,10 +64,10 @@ const uint16_t flow_config[FLOW_COUNT][2] = {
     {L_EXT, KC_LSFT},
     {L_EXT, KC_LCTL},
     {L_EXT, KC_RALT},
-    {L_FUNC, KC_LALT},
-    {L_FUNC, KC_LGUI},
-    {L_FUNC, KC_LSFT},
-    {L_FUNC, KC_LCTL}
+    {L_SYM, KC_LALT},
+    {L_SYM, KC_LGUI},
+    {L_SYM, KC_LSFT},
+    {L_SYM, KC_LCTL}
 };
 
 const uint16_t flow_layers_config[FLOW_LAYERS_COUNT][2] = {
@@ -171,23 +173,46 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * ,-----------------------------------------.                    ,-----------------------------------------.
  * |      |  F1  |  F2  |  F3  |  F4  |  F5  |                    |  F6  |  F7  |  F8  |  F9  | F10  | F11  |
  * |------+------+------+------+------+------|                    |------+------+------+------+------+------|
- * |      |   !  |   @  |   #  |   :  |   ;  |                    |   =  |   7  |   8  |   9  |   +  | F12  |
+ * |      |   !  |   @  |   #  |   $  |   %  |                    |   =  |   `  |   :  |   ;  |   +  | F12  |
  * |------+------+------+------+------+------|                    |------+------+------+------+------+------|
- * |      |   \  |   |  |   {  |   (  |   [  |-------.    ,-------|   *  |   4  |   5  |   6  |   -  |      |
+ * |      |O_LAlt|O_LGUI|O_LSft|O_Lctl|   ^  |-------.    ,-------|   *  |   (  |   {  |   [  |   -  |      |
  * |------+------+------+------+------+------|  MUTE |    |       |------+------+------+------+------+------|
- * |      |   \  |   |  |   }  |   )  |   ]  |-------|    |-------|   0  |   1  |   2  |   3  |   /  | Enter|
+ * |      |   \  |   |  |   \  |   |  |   &  |-------|    |-------|   ~  |   )  |   }  |   ]  |   _  |      |
  * `-----------------------------------------/       /     \      \-----------------------------------------'
- *            | LGUI | LAlt | LCTR |MOUSE | /LShift /       \Space \  | SYM  | RCTR | RAlt | RGUI |
+ *            | LGUI | LAlt | LCTR | NUM  | /LShift /       \Space \  | SYM  | RCTR | RAlt | RGUI |
  *            |      |      |      |      |/       /         \      \ |      |      |      |      |
  *            `----------------------------------'           '------''---------------------------'
  */
 
 [_SYM] = LAYOUT(
-  _______, KC_F1,    KC_F2,       KC_F3,     KC_F4,    KC_F5,                           KC_F6,    KC_F7,  KC_F8,  KC_F9,  KC_F10,   KC_F11,
-  _______, KC_EXLM,  KC_AT,       KC_HASH,   KC_COLN,  KC_SCLN,                         KC_EQL,   KC_7,   KC_8,   KC_9,   KC_PLUS,  KC_F12,
-  _______, KC_BSLS,  KC_PIPE,     KC_LCBR,   KC_LPRN,  KC_LBRC,                         KC_ASTR,  KC_4,   KC_5,   KC_6,   KC_MINS,  _______,
-  _______, KC_NUBS,  S(KC_NUBS),  KC_RCBR,   KC_RPRN,  KC_RBRC, _______,       _______, KC_0,     KC_1,   KC_2,   KC_3,   KC_SLSH,  KC_ENT,
-                            _______, _______, _______, L_MOUSE, _______,       _______, _______, _______, _______, _______
+  _______, KC_F1,    KC_F2,       KC_F3,    KC_F4,       KC_F5,                           KC_F6,    KC_F7,    KC_F8,    KC_F9,    KC_F10,   KC_F11,
+  _______, KC_EXLM,  KC_AT,       KC_HASH,  KC_DLR,      KC_PERC,                         KC_EQL,   KC_GRV,   KC_COLN,  KC_SCLN,  KC_PLUS,  KC_F12,
+  _______, KC_LALT,  KC_LGUI,     KC_LSFT,  KC_LCTL,     KC_CIRC,                         KC_ASTR,  KC_LPRN,  KC_LCBR,  KC_LBRC,  KC_MINS,  _______,
+  _______, KC_NUBS,  S(KC_NUBS),  KC_NUHS,  S(KC_NUHS),  KC_AMPR, _______,       _______, KC_TILD,  KC_RPRN,  KC_RCBR,  KC_RBRC,  KC_UNDS,  _______,
+                              _______, _______, _______, L_NUM,   _______,       _______, _______, _______, _______, _______
+),
+
+/* NUM
+ * ,-----------------------------------------.                    ,-----------------------------------------.
+ * |      |      |      |      |      |      |                    |      |      |      |      |      |      |
+ * |------+------+------+------+------+------|                    |------+------+------+------+------+------|
+ * |      |   !  |   @  |   #  |   :  |   ;  |                    |   =  |   7  |   8  |   9  |   +  |      |
+ * |------+------+------+------+------+------|                    |------+------+------+------+------+------|
+ * |      |O_LAlt|O_LGUI|O_LSft|O_Lctl|O_RAlt|-------.    ,-------|   *  |   4  |   5  |   6  |   -  |      |
+ * |------+------+------+------+------+------|  MUTE |    |       |------+------+------+------+------+------|
+ * |      |   \  |   |  |   }  |   )  |   ]  |-------|    |-------|   0  |   1  |   2  |   3  |   /  |      |
+ * `-----------------------------------------/       /     \      \-----------------------------------------'
+ *            | LGUI | LAlt | LCTR | EXT  | /LShift /       \Space \  | SYM  | RCTR | RAlt | RGUI |
+ *            |      |      |      |      |/       /         \      \ |      |      |      |      |
+ *            `----------------------------------'           '------''---------------------------'
+ */
+
+[_NUM] = LAYOUT(
+  _______, _______,  _______,  _______,  _______,  _______,                         _______,  _______,  _______,  _______,  _______,  _______,
+  _______, _______,  _______,  _______,  _______,  KC_NUM,                          KC_EQL,   KC_7,     KC_8,     KC_9,     KC_PLUS,  _______,
+  _______, KC_LALT,  KC_LGUI,  KC_LSFT,  KC_LCTL,  KC_RALT,                         KC_ASTR,  KC_4,     KC_5,     KC_6,     KC_MINS,  _______,
+  _______, _______,  KC_APP,   KC_TAB,   KC_BSPC,  KC_ENT,  _______,       _______, KC_0,     KC_1,     KC_2,     KC_3,     KC_SLSH,  _______,
+                        _______, _______, _______, _______, _______,       _______, _______, _______, _______, _______
 ),
 
 /* MOUSE
@@ -264,6 +289,9 @@ static void print_status_narrow(void) {
             break;
         case _FUNC:
             oled_write_P(PSTR("Func"), false);
+            break;
+        case _NUM:
+            oled_write_P(PSTR("Num\n"), false);
             break;
         case _MOUSE:
             oled_write_P(PSTR("Mouse\n"), false);
