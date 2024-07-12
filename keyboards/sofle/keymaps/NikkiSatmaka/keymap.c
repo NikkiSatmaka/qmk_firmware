@@ -179,7 +179,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |------+------+------+------+------+------|  MUTE |    |       |------+------+------+------+------+------|
  * |      |   \  |   |  |   \  |   |  |   &  |-------|    |-------|   ~  |   )  |   }  |   ]  |   _  |      |
  * `-----------------------------------------/       /     \      \-----------------------------------------'
- *            | LGUI | LAlt | LCTR | NUM  | /LShift /       \Space \  | SYM  | RCTR | RAlt | RGUI |
+ *            | LGUI | LAlt | LCTR |MOUSE | /  NUM  /       \Space \  | SYM  | RCTR | RAlt | RGUI |
  *            |      |      |      |      |/       /         \      \ |      |      |      |      |
  *            `----------------------------------'           '------''---------------------------'
  */
@@ -189,7 +189,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   _______, KC_EXLM,  KC_AT,       KC_HASH,  KC_DLR,      KC_PERC,                         KC_EQL,   KC_GRV,   KC_COLN,  KC_SCLN,  KC_PLUS,  KC_F12,
   _______, KC_LALT,  KC_LGUI,     KC_LSFT,  KC_LCTL,     KC_CIRC,                         KC_ASTR,  KC_LPRN,  KC_LCBR,  KC_LBRC,  KC_MINS,  _______,
   _______, KC_NUBS,  S(KC_NUBS),  KC_NUHS,  S(KC_NUHS),  KC_AMPR, _______,       _______, KC_TILD,  KC_RPRN,  KC_RCBR,  KC_RBRC,  KC_UNDS,  _______,
-                              _______, _______, _______, L_NUM,   _______,       _______, _______, _______, _______, _______
+                              _______, _______, _______, L_MOUSE, L_NUM,         _______, _______, _______, _______, _______
 ),
 
 /* NUM
@@ -202,7 +202,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |------+------+------+------+------+------|  MUTE |    |       |------+------+------+------+------+------|
  * |      |      | Menu |  Tab | Bspc |Enter |-------|    |-------|   0  |   1  |   2  |   3  |   /  |      |
  * `-----------------------------------------/       /     \      \-----------------------------------------'
- *            | LGUI | LAlt | LCTR | EXT  | /LShift /       \Space \  | SYM  | RCTR | RAlt | RGUI |
+ *            | LGUI | LAlt | LCTR |MOUSE | /  NUM  /       \Space \  | SYM  | RCTR | RAlt | RGUI |
  *            |      |      |      |      |/       /         \      \ |      |      |      |      |
  *            `----------------------------------'           '------''---------------------------'
  */
@@ -225,7 +225,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |------+------+------+------+------+------|  MUTE |    |       |------+------+------+------+------+------|
  * |DF_CLM|M Wl L|MOUS3 |MOUS4 |MOUS5 |M Wl R|-------|    |-------|M Acc0|   !  |   @  |   #  |      |      |
  * `-----------------------------------------/       /     \      \-----------------------------------------'
- *            | LGUI | LAlt | LCTR | EXT  | /Enter  /       \Space \  | SYM  | RCTR | RAlt | RGUI |
+ *            | LGUI | LAlt | LCTR |MOUSE | /  NUM  /       \Space \  | SYM  | RCTR | RAlt | RGUI |
  *            |      |      |      |      |/       /         \      \ |      |      |      |      |
  *            `----------------------------------'           '------''---------------------------'
  */
