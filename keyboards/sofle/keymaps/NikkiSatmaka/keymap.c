@@ -150,11 +150,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * ,-----------------------------------------.                    ,-----------------------------------------.
  * |      |      |      |      |      |      |                    |      |      |      |      |      |      |
  * |------+------+------+------+------+------|                    |------+------+------+------+------+------|
- * |      | MUTE | VOLDO| PLAY | VOLUP| BRIUP|                    |  F12 |  F7  |  F8  |  F9  |ZoomIn|      |
+ * |      | STOP | PREV | PLAY | NEXT | BRIUP|                    |  F12 |  F7  |  F8  |  F9  |ZoomIn|      |
  * |------+------+------+------+------+------|                    |------+------+------+------+------+------|
  * |      |O_LAlt|O_LGUI|O_LSft|O_Lctl| BRIDN|-------.    ,-------|  F11 |  F4 |   F5  |  F6  |ZoomOut|     |
  * |------+------+------+------+------+------|  MUTE |    |       |------+------+------+------+------+------|
- * |      | EJECT| PREV | STOP | NEXT |      |-------|    |-------|  F10 |  F1  |  F2  |  F3  |ZoomRst|     |
+ * |      | MUTE | VOLDO| Copy | VOLUP|Paste |-------|    |-------|  F10 |  F1  |  F2  |  F3  |ZoomRst|     |
  * `-----------------------------------------/       /     \      \-----------------------------------------'
  *            | LGUI | LAlt | LCTR | EXT  | /LShift /       \Space \  | SYM  | RCTR | RAlt | RGUI |
  *            |      |      |      |      |/       /         \      \ |      |      |      |      |
@@ -162,11 +162,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  */
 
 [_FUNC] = LAYOUT(
-  _______, _______, _______, _______, _______, _______,                               _______,  _______, _______,  _______,  _______, _______,
-  _______, KC_MUTE,  KC_VOLD,  KC_MPLY,  KC_VOLU,  KC_BRIU,                           KC_F12,  KC_F7,  KC_F8,  KC_F9,  C(KC_PPLS),  _______,
-  _______, KC_LALT,  KC_LGUI,  KC_LSFT,  KC_LCTL,  KC_BRID,                           KC_F11,  KC_F4,  KC_F5,  KC_F6,  C(KC_PMNS),  _______,
-  _______, KC_EJCT,  KC_MPRV,  KC_MSTP,  KC_MNXT,  XXXXXXX,  _______,       _______,  KC_F10,  KC_F1,  KC_F2,  KC_F3,  C(KC_P0),    _______,
-                         _______, _______, _______, _______, _______,       _______, _______, _______, _______, _______
+  _______, _______,  _______,  _______,    _______,  _______,                           _______,  _______,  _______,  _______,  _______,     _______,
+  _______, KC_MSTP,  KC_MPRV,  KC_MPLY,    KC_MNXT,  KC_BRIU,                           KC_F12,   KC_F7,    KC_F8,    KC_F9,    C(KC_PPLS),  _______,
+  _______, KC_LALT,  KC_LGUI,  KC_LSFT,    KC_LCTL,  KC_BRID,                           KC_F11,   KC_F4,    KC_F5,    KC_F6,    C(KC_PMNS),  _______,
+  _______, KC_MUTE,  KC_VOLD,  RCS(KC_C),  KC_VOLU,  RCS(KC_V), _______,       _______, KC_F10,   KC_F1,    KC_F2,    KC_F3,    C(KC_P0),    _______,
+                            _______, _______, _______, _______, _______,       _______, _______, _______, _______, _______
 ),
 
 /* SYM
